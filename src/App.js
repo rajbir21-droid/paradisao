@@ -54,7 +54,7 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Small chat only</p>
+      <p>Do not violate the community guidelines or you will be banned for life!</p>
     </>
   )
 
@@ -70,7 +70,7 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(60);
+  const query = messagesRef.orderBy('createdAt').limit(25);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
 
